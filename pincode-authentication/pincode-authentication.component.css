@@ -1,0 +1,14 @@
+.logo{
+    margin-top: 40%;
+}
+
+.container_style {
+    width: 90%;
+    max-width: 450px;
+    margin: auto;
+    padding: 23px;
+}
+
+.ng-invalid:not(form){
+    border-right: 5px red solid;
+}

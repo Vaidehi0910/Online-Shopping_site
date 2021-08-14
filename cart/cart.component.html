@@ -1,0 +1,51 @@
+<br><br><br>
+<div class="container">
+    <h4><b>Your Cart</b></h4>
+    <button class="btn btn-succss" (click)=navigate()><i class="fas fa-arrow-alt-circle-left fa-2x" style="color: green;"></i></button>
+</div>
+<div class="container" *ngIf="EmptyCart()"><h4><b>Your Cart Is Empty</b></h4></div>
+<div class="container" *ngFor=" let item of items">
+    <div class="card">
+        <button type="button" class="close" (click)="delete(item)">
+            <span>X</span>
+        </button>
+        <img style="float:left" src={{item.imgURI}} alt="Product Image" width="75px" height="75px"> 
+       <span>
+        <b>{{item.prodName}}</b><br>
+        MRP: ₹<del>{{item.mrp}}</del><br>
+        SP: ₹{{item.sellingPrice}}
+        <div class="form-check-inline">
+
+            <div class="btn btn-danger" (click)="minus(item)">
+                <i class="fa fa-minus"></i>
+                <!-- <b>-</b> -->
+            </div>
+            <input type="text" class="form-control" [(ngModel)]="item.countInCart" disabled>
+            <div class="btn btn-success" (click)="plus(item)">
+                <i class="fa fa-plus"></i>
+                <!-- <b>+</b> -->
+            </div>
+
+        </div>
+
+</span>
+</div>
+</div>
+<!-- {{total}} -->
+<!-- <span>{{item.prodName}}</span>
+<span>{{item.sellingPrice}}</span>
+</div> -->
+<!-- <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div>
+        <label for="name">
+            Name
+        </label>
+        <input id="name" type="text" formControlName="name">
+    </div>
+    <label for="address">
+        Address
+        <input id="address" type="text" formControlName="address">
+    </label>
+
+    <button class="button" type="submit">Purchase</button>
+</form> -->

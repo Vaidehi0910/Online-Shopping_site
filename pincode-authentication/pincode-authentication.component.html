@@ -1,0 +1,38 @@
+<br><br><br>
+<div class="container">
+    <div class="row justify-content-center mt-4" *ngIf="!loading && !splashscreen">
+<div class="col-md-4 shadow-lg p-3 mb-4 bg white rounded">
+    <b>Please enter your Pincode again for verfication</b> 
+    <form (ngSunbit)="!pinForm.invalid && confirmPincode()" #pinForm="ngForm">
+        <!-- <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div> -->
+        <fieldset class="form-group">
+        <label>Pincode<b class="text-danger">*</b>:</label><br>
+        <input type="text" [(ngModel)]="pincodeDto.pincode" placeholder="Pincode" class="form-control" name="pincode" required minlength="6" maxlength="6" pattern="[1-9]{1}[0-9]{5}">
+        <div class="text-danger" style="font-size: x-small;" *ngIf="pinForm.invalid"><b>*Please enter a valid pincode</b></div><br>
+    </fieldset>
+
+    <p class="text-center">
+        <button *ngIf="!pinForm.invalid " class="btn btn-success " type="submit" (click)=confirmPincode()>GO</button>
+        <button *ngIf="pinForm.invalid " class="btn btn-success " type="submit" disabled>Go</button> </p>
+    </form>
+</div>
+</div>
+
+<div class="text-center" *ngIf="loading">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+
+<div class="logo text-center" *ngIf="splashscreen">
+    <img class="" src="https://storage.googleapis.com/download/storage/v1/b/mystore-category-bucket/o/STJGwastaDzRuMA75pHEOZ9at5fE05wcCYE2r8KI_bannerImage?generation=1594750791383161&alt=media"
+        style="width:100px;height:100px;"><br><br>
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+</div>
+
+
+</div>
+

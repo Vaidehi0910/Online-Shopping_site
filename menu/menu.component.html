@@ -1,0 +1,19 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="navbar-nav mr-auto" *ngIf="hideThings()">
+        <li class="nav-items">
+          <a class="btn btn-success btn-sm ml-2" style="color: white;" (click)="homeclick()"><i class="fas fa-house-user"></i>Home</a>
+        </li>
+      </div>
+
+      <span class="navbar-brand text-center" style="font-family: cursive;">DD Store</span>
+
+      <div class="navbar-nav ml-auto" *ngIf="hideThings()">
+        <a class="btn btn-success btn-sm ml-3" routerLink="/cart">
+          <i class="fas fa-shopping-cart"></i>Cart
+          <span class="badge badge-light" *ngIf="countProduct() !==0">{{countProduct()}}</span>
+        </a>
+      </div>
+    </nav>
+  
+  </header>

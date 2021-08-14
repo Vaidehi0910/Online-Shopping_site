@@ -1,0 +1,103 @@
+@import url("https://kit.fontawesome.com/a076d05399.js"); 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card{
+    display: inline-block;
+    height: 100px;
+    width: 400px;
+    box-shadow: 0 2px 4px 0 gray;
+    transition: 0.3s;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+/* .card:hover{
+    box-shadow: 0 8px 16px 0 gray;
+} */
+.container{
+    padding-top: 3px;
+    padding-left: 380px;
+}
+.container h6{
+    padding-left: 150px;
+}
+.container h4{
+    padding-left: 150px;
+}
+.container img{
+    padding-right: 10px;
+}
+.card span{
+    font-size: xx-small;
+}
+.quantity{
+    float: right;
+    size: 30px;
+    padding-right:20px ;
+}
+/* .fa-minus:before{
+    content: "\f068";
+}
+.fa-plus:before{
+    content: "\f067";
+} */
+.quantity .btn i{
+    font-size: 10px;
+    color: white;
+
+}
+.inwidth{
+    width: 10%;
+    height: 30px;
+}
+input{
+    text-align: center;
+    width: 40px;
+}
+/* .pull-right{
+    float: right;
+} */
+input{
+    overflow: visible;
+}
+input:disabled{
+    background-color: lightgrey;
+    border-color: darkgrey;
+}
+.form-check-inline{
+    padding-left: 150px;
+    padding-bottom: 50%;
+}
+.close span{
+ padding-right: 10px; 
+}
+button .close span:hover{
+    size: 25px;
+}
+/* .fas{
+    font-size: 15px;
+    color: black;
+    display: inline-block;
+    font-style: normal;
+    font-family: "Font Awesome";
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+} */
+/* .arrow::after{
+    font-family: "Font Awesome";
+    content: "\f060";
+    font-weight: 900;
+} */

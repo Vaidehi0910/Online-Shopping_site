@@ -1,0 +1,46 @@
+
+<br>
+<!-- <div class="alert alert-success" *ngIf="message">{{message}}</div> -->
+<div class="container">
+    <h3 ><b>{{categoryName}}</b></h3>
+    <h4 ><b>Select Product</b></h4>
+
+    <button class="btn btn-succss" (click)="Navigate()"><i class="fas fa-arrow-alt-circle-left fa-2x" style="color: green;"></i></button>
+    <div class="text">
+        <h4 *ngIf="isEmpty()"><b>No Products in this category.<br><span>We are working on this.</span></b></h4>
+    </div>
+        <!-- <input type="text" name="searchString" placeholder="Search Products here..." class="search form-control" [(ngModel)]="searchString"/> -->
+</div>
+<br>
+
+<div class="container" *ngFor=" let product of allProductDto">
+    <div class="card">
+        <img style="float:left" src={{product.imgURI}} alt="Product Image" width="75px" height="75px"> 
+       <span>
+        <b>{{product.prodName}}</b><br>
+        MRP: ₹<del>{{product.mrp}}</del><br>
+        SP: ₹{{product.sellingPrice}}
+</span>
+<div class="btn btn-success float-right" (click)=addToCart(product)>ADD</div>
+    </div>
+</div>
+
+<br><br><br><br>
+
+<!-- <table class="table">
+    <tbody>
+        <tr>
+           <th>Availability</th>
+            <th>Product Name</th>
+            <th>Mrp</th>
+            <th>Selling Price</th>
+        </tr>
+        <tr *ngFor=" let product of allProductDto">
+             <td>{{product.availability}}</td> 
+            <td >{{product.prodName}}</td>
+            <td>{{product.mrp}}</td>
+            <td>{{product.sellingPrice}}</td>
+        </tr>
+    </tbody>
+</table> -->
+<!-- hello -->

@@ -1,0 +1,79 @@
+<br><br><br>
+<div class="container " *ngIf="!loading">
+    <a class="btn btn-success btn-sm ml-0 " style="color:white" (click)="backPage()">
+        <i class="fa fa-arrow-left" ></i>        
+    </a>
+    <div class="row justify-content-center mt-4 ">       
+        <div class="col-md-4  shadow-lg p-3 mb-4 bg-white rounded ">
+            <b>Please enter your details</b>
+            <form (ngSubmit)="!regForm.invalid && confirmOrder()" #regForm="ngForm">
+            
+                <fieldset class="form-group">
+                    <label>Name<b class="text-danger">*</b> :</label>
+                    <input type="text" [(ngModel)]="createOrderDto.name" class="form-control" name="name"
+                    pattern="^[A-Za-z][A-Za-z\s]*$"  placeholder="Name" required>
+                </fieldset>
+                 <fieldset class="form-group">
+                <label>Email <span class="text-muted"> (Optional)</span> :</label>
+                <input type="email" [(ngModel)]="createOrderDto.email" class="form-control" name="email"
+                    placeholder="Email" >
+                </fieldset>
+               <fieldset class="form-group">
+                <label>Mobile No.<b class="text-danger">*</b> :</label>
+                <div class="form-row">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">+91</div>
+                        </div>
+
+                        <input type="text" [(ngModel)]="createOrderDto.phone" class="form-control " name="phone"
+                            placeholder="Number" minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" required>
+                    </div>
+                </div>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>Pin Code<b class="text-danger">*</b> :</label>
+                <input type="text" [(ngModel)]="createOrderDto.pincode" class="form-control" name="pincode"
+                    placeholder="Pincode" minlength="6" maxlength="6" pattern="[1-9]{1}[0-9]{5}" disabled required>
+
+                </fieldset>
+                <fieldset class="form-group">
+                <label>Address<b class="text-danger">*</b> :</label>
+               
+                <textarea class="form-control" [(ngModel)]="createOrderDto.address" name="address" rows="3"
+                    placeholder="Address" required></textarea>
+                 </fieldset>
+
+                 <fieldset class="form-group">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="paymentmode" checked>Cash
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input text-muted" name="paymentmode"  disabled><span class="text-muted">Online (Coming Soon)</span>
+                        </label>
+                    </div>
+                     </fieldset>
+                     <fieldset class="form-group">          
+           
+                        <textarea class="form-control" [(ngModel)]="createOrderDto.comments" name="comments" rows="3"
+                        maxlength="500" placeholder="If you want more products, which are not available . Please mention here . we'll try to arrange it for you, If possible" ></textarea>
+                         </fieldset>
+                    <p *ngIf="regForm.invalid"><b class="text-danger" style="font-size: x-small;">* Please enter valid details, to avoid cancellation</b></p>
+                <p class="text-center">
+
+                    <button *ngIf="!regForm.invalid " class="btn btn-success " type="submit">Place Order</button>
+                    <button *ngIf="regForm.invalid " class="btn btn-success " type="submit" disabled>Place Order</button> </p>
+            </form>
+        </div>
+
+    </div>
+</div>
+<br><br><br>
+<div class="text-center" *ngIf="loading">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>

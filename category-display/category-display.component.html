@@ -1,0 +1,99 @@
+<br>
+
+<div class='container-fluid'>   
+    <div class='col-12'>  
+        <ngb-carousel>  
+            <ng-template ngbSlide>  
+                <img class="banner" src="../assets/Images/m3.png" alt="Delhi Metro">  
+                <!-- <div class="carousel-caption">  
+                    <h3 style="color: yellow">Delhi Metro</h3>  
+                </div>   -->
+            </ng-template>  
+            <ng-template ngbSlide>  
+                <img class="banner" src="../assets/Images/m2.png" alt="Bangalore Metro">  
+                <!-- <div class="carousel-caption">  
+                    <h3 style="color: yellow">Bangalore Metro</h3>  
+                </div>   -->
+            </ng-template>  
+            <!-- <ng-template ngbSlide>  
+                <img src="../assets/Images/m4.jpg" alt="Channai Metro">  
+                <div class="carousel-caption">  
+                    <h3 style="color: yellow">Channai Metro</h3>  
+                </div>  
+            </ng-template>   -->
+            <!-- <ng-template ngbSlide>  
+                <img src="../assets/Images/m5.jpg" alt="Jaipur Metro">  
+                <div class="carousel-caption">  
+                    <h3 style="color: yellow">Jaipur Metro</h3>  
+                </div>  
+            </ng-template>   -->
+            <ng-template ngbSlide>  
+                <img class="banner" src="../assets/Images/m1.png" alt="Mumbai Metro">  
+                <!-- <div class="carousel-caption">  
+                    <h3 style="color: yellow">Mumbai Metro</h3>  
+                </div>   -->
+            </ng-template>  
+        </ngb-carousel>  
+    </div>  
+  
+</div>  
+<br>
+<div class="style">
+<div class="container">
+    <!-- //carousel  -->
+    
+    <!-- //<img src={{category.imgBannerURI}} alt="img Banner"> -->
+    <!-- <input type="text" class="search form-control shadow" name="searchString" placeholder="&#61442; Search Any Product Here.." [(ngModel)]="searchString" /><br> -->
+    <h4><b>Shop by Category</b></h4></div><br>
+    <div class="list-items">
+    <div class="list-item" *ngFor="let category of categoryDto" (click)=Router(category.categoryID,category.categoryName)>
+    <div class="card" (click)=Route(category.prodDto)>
+ <!-- //<img  src={{category.imgBannerURI}} id="{{category.imgBannerURI}}" width="25" height="100" alt="category image" />   -->
+<img class="card-img-top" src={{category.imgLogoURI}} id="{{category.imgLogoURI}}" width="100px" height="100px" alt="Image LOGO">
+
+            <h6 class="card-title">{{category.categoryName}}</h6>
+             <!-- //<td *ngFor="let product of ProductDetailsDto">{{product.prodDto}}</td>  -->
+        </div>           
+</div>
+</div>
+</div>
+<br><br><br><br>
+<!-- //class="card-img-top" -->
+
+
+
+<!-- <input type="text" class="search form-control shadow" name="searchString"
+        placeholder="&#61442; Search Any Product Here...." [(ngModel)]="searchString" />
+
+    <div class="row" *ngIf="searchStringLength() !== 0">
+        <div class="col-12 mt-3"
+            *ngFor="let product of allProductsList | filter : 'prodName' : searchString; let i = index ">
+            <div class="card shadow border-0 ">
+                <div class="card-horizontal">
+                    <div class="img-square-wrapper">
+                        <img class="" src={{product.imgURI}} style="width:60px;height:60px;" alt="Card image cap">
+                    </div>
+
+                    <div class="card-body">
+                        <div class="float-left"> <b>{{product.prodName}}</b><br>
+                            <div *ngIf="product.mrp !== product.sellingPrice">MRP:&nbsp;<i
+                                    class="fa fa-rupee"></i>&nbsp;<del>{{product.mrp}}</del></div>
+                            <div *ngIf="product.mrp === product.sellingPrice">MRP:&nbsp;<i
+                                    class="fa fa-rupee"></i>&nbsp;{{product.mrp}}</div>
+                            <div *ngIf="product.mrp !== product.sellingPrice">SP:&nbsp;<i class="fa fa-rupee"></i>
+                                &nbsp;{{product.sellingPrice}}
+                            </div>
+                        </div>
+                        <span>
+                            <button type="button" class="btn btn-success float-right "
+                                (click)="addProductInCart(product)">
+                                Add
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div> -->
